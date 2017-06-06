@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Notificação";
+
+    ViewBag.pns = "gcm";
+
+    ViewBag.message = "message";
+
+    ViewBag.toTag = Html.Value("tagDestino");
+}
+
+<h2>Notificação</h2>
+
+@using (Html.BeginForm("Post", "Notifications"))
+{
+    <input hidden type="text" id="pns" name="pns" value="gcm"/>
+    <br />
+    <label>Mensagem</label>
+    <input type="text" id="message" name="message"/>
+    <br /><br />
+    <label>Destinatário</label>
+    <input type="text" id="to_tag" name="to_tag"/>
+    <br /><br />
+    <label>Informação para Activity</label>
+    <input type="text" id="informacao" name="informacao" />
+    <br /><br />
+
+    <button type="submit" name="botao1" id="botao1">Enviar Notificação Individual</button>
+}
