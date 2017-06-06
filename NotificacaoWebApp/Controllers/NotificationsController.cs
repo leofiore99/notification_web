@@ -44,6 +44,9 @@ namespace NotificacaoWebApp.Controllers
                     break;
                 case "gcm":
                     // Android
+                    //user - Usuário que envia a solicitação.
+                    //message - Mensagem que aparecerá no corpo da notificação.
+                    //informacao - Dados que aparecerão na tela do usuário ao abrir a notificação.
                     var notif = "{ \"data\" : {\"message\":\"" + "From " + user + ": " + message + "\", \"informacao\": \""+ informacao + "\"}}";
 
                     outcome = await Notifications.Instance.Hub.SendGcmNativeNotificationAsync(notif, to_tag);
